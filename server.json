@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
+  "name": "co.fingersai/fingers",
+  "description": "Ask what you can't be sure of. fingers tells you what's actually true about a token, NFT, wallet, contract, or tokenized stock before you act. Read-only and non-custodial. Deepest coverage on Robinhood Chain: honeypot, peg, copycats, NFT contents.",
+  "status": "active",
+  "version": "1.0.0",
+  "websiteUrl": "https://fingersai.co",
+  "repository": {
+    "url": "https://github.com/fingersaiofficial/fingers-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://fingersai.co/mcp"
+    }
+  ]
+}
