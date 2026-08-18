@@ -1,25 +1,23 @@
 # Add fingers to your agent. 30 seconds, no install.
 
-fingers is a **remote MCP server**. There is nothing to download and nothing to run locally. You point your client at one URL:
+fingers is a **remote MCP server**. Nothing to download, nothing to run locally. Point your client at one URL:
 
 ```
 https://fingersai.co/mcp
 ```
 
-It exposes a `verify` tool plus around 40 discrete checks: honeypot, peg, copycats, NFT contents, wallet risk, and more. Read-only and non-custodial. It never asks to connect a wallet.
+It exposes a `verify` tool plus ~44 discrete checks: honeypot, peg, copycats, NFT contents, wallet risk, and more. Read-only and non-custodial — it never asks to connect a wallet.
+
+**Free to start. Pay-per-call after that, no signup:** every caller gets free checks daily. Past that, an agent pays **$0.15 in USDC on Base via x402** — its wallet auto-pays and the call goes right through, no key and no human needed. Or add an API key for a funded account.
 
 ---
 
 ## One-click install
-- **Cursor:** `cursor://anysphere.cursor-deeplink/mcp/install?name=fingers&config=eyJ1cmwiOiJodHRwczovL2ZpbmdlcnNhaS5jby9tY3AifQ%3D%3D`
-- **VS Code:** `https://insiders.vscode.dev/redirect/mcp/install?name=fingers&config=%7B%22name%22%3A%22fingers%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//fingersai.co/mcp%22%7D`
 
-(These are the URLs behind the "Add to Cursor" and "Add to VS Code" badge buttons. Drop them on the website.)
-
----
+[![Add to Cursor](https://img.shields.io/badge/Add_to-Cursor-1e1e1e)](cursor://anysphere.cursor-deeplink/mcp/install?name=fingers&config=eyJ1cmwiOiJodHRwczovL2ZpbmdlcnNhaS5jby9tY3AifQ%3D%3D)
+[![Add to VS Code](https://img.shields.io/badge/Add_to-VS_Code-0098FF?logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=fingers&config=%7B%22name%22%3A%22fingers%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//fingersai.co/mcp%22%7D)
 
 ## Claude Code
-
 ```bash
 claude mcp add --transport http fingers https://fingersai.co/mcp
 ```
@@ -75,6 +73,9 @@ Bridge the remote server with `mcp-remote`:
 }
 ```
 
+## Coinbase AgentKit (pay-per-call, native x402)
+AgentKit's x402 MCP wrapper handles the payment loop for you — point it at `https://fingersai.co/mcp` and it pays per call automatically, with your own spend limits.
+
 ## Raw MCP (any language)
 Streamable HTTP, JSON-RPC 2.0, protocol `2025-06-18`. Handshake:
 ```bash
@@ -87,7 +88,7 @@ curl -s https://fingersai.co/mcp -X POST -H 'content-type: application/json' \
 ## Also reachable as
 - **A2A Agent Card:** `https://fingersai.co/.well-known/agent-card.json`
 - **REST:** `POST https://fingersai.co/ask`
-- **ERC-8004 registration:** `https://fingersai.co/.well-known/agent-registration.json`
+- **ERC-8004 on-chain identity:** agent **#50182** (Ethereum), file at `https://fingersai.co/.well-known/agent-registration.json`
 
 ## What people ask it
 - Is this token on Robinhood Chain a honeypot
